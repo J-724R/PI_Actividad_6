@@ -48,10 +48,12 @@ export const AllNode = () => {
         <div className="container timelineContainer h-100 flex-column gap-0">
             {
                 timeline.map((event, index) => {
+                    { console.log(event.linkNav) }
                     if (index % 2 !== 0) {
                         return (
 
                             <div className="scrollNode d-flex justify-content-between align-items-centerW">
+
                                 <a className="oddImage" href={event.linkNav}>
                                     <img className="w-100 my-5 roundImg" src={event.img.src} alt="Map" />
                                 </a>
