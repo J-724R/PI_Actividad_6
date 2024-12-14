@@ -4,6 +4,7 @@ import { timeline } from "../../data/timeline";
 import "../../styles/event.scss";
 import { Image } from "astro:assets";
 import {ExtraText} from "../../Components/Extratext";
+import placeholder from "../../assets/Timeline/distribucion.jpg"
 
 export async function getStaticPaths() {
     const paths = timeline.map((event) => ({
@@ -14,6 +15,7 @@ export async function getStaticPaths() {
 }
 const params = Astro.request.url.split("/Articulos/")[1];
 const event = timeline.find((event) => event.param === params);
+const img = (event ) ? event.img : placeholder
 ---
 
 <BaseLayout pageTitle={event?.title}>
@@ -37,23 +39,6 @@ const event = timeline.find((event) => event.param === params);
                     ))
                 }
                 <ExtraText event={event} />
-                <!-- {
-                    event?.extra?.map((paragraph) => (
-                         <p class="fs-5 m-0 justify-text "><b>{paragraph.title}</b></p>
-                         <div>
-                            {
-                            //@ts-ignore
-                            paragraph.text?.map((item: any) => (<p class="fs-5 m-0 justify-text ">{item}</p><br>))
-                            }
-                         </div>
-
-                        //@ts-ignore
-                        <p class="fs-5 m-0 justify-text ">{paragraph.listTitle}</p>
-                        <ul>
-                            {paragraph.listText?.map((item) => (<li class="fs-5 m-0 justify-text ">{item}</li>))}
-                         </ul> 
-                    ))
-                } -->
                 <a class="raw-umber-font fw-bold letterSpace" href={event?.link}
                     >Seguir leyendo la cita original</a
                 >
@@ -77,7 +62,7 @@ const event = timeline.find((event) => event.param === params);
                     Volver
                 </button>
             </div>
-            <Image class="eventImg mt-5 align-self-end" src={event!.img} alt="Map" />
+            <Image class="eventImg mt-5 align-self-end" src={img} alt="Map" />
         </div>
     </div>
 </BaseLayout>

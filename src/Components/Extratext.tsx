@@ -1,6 +1,6 @@
 
 
-export const ExtraText = (event: any) => {
+export const ExtraText = ({ event }: any) => {
     return (
         <>
             {
