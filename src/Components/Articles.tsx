@@ -1,10 +1,8 @@
 import "../styles/article.scss"
 import { timeline } from "../data/timeline"
-// import React, { useEffect, useRef, useState } from "react"
 
 
 export const Articles = () => {
-
     return (
         <div className="d-flex w-100 bookList gap-2 justify-content-evenly flex-wrap">
             {

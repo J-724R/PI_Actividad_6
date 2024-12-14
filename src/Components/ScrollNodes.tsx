@@ -1,13 +1,6 @@
 import "../styles/scrollNode.scss"
 import { timeline } from "../data/timeline"
-import React, { useEffect, useRef, useState } from "react"
-
-type scrollNode = {
-    title: string,
-    text: string,
-    imag: string,
-
-}
+import React, { useEffect, useState } from "react"
 
 export const AllNode = () => {
     const [nodeRefs, setNodeRefs] = useState<React.RefObject<HTMLDivElement>[]>([]);
