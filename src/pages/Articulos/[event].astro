@@ -41,9 +41,13 @@ const event = timeline.find((event) => event.param === params);
                     event?.extra?.map((paragraph) => (
                          <p class="fs-5 m-0 justify-text "><b>{paragraph.title}</b></p>
                          <div>
-                             {paragraph.text?.map((item: any) => (<p class="fs-5 m-0 justify-text ">{item}</p><br>))}
+                            {
+                            //@ts-ignore
+                            paragraph.text?.map((item: any) => (<p class="fs-5 m-0 justify-text ">{item}</p><br>))
+                            }
                          </div>
 
+                        //@ts-ignore
                         <p class="fs-5 m-0 justify-text ">{paragraph.listTitle}</p>
                         <ul>
                             {paragraph.listText?.map((item) => (<li class="fs-5 m-0 justify-text ">{item}</li>))}
