@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { AllNode } from "../Components/ScrollNodes";
+const pageTitle = "Un viaje por la historia";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="d-flex flex-column superContainer align-items-center p-5 w-100">
+        <div
+            class="container d-flex mainTextContainer gap-5 w-100 flex-wrap p-5 mb-5"
+        >
+            <div
+                class="d-flex flex-column mainText align-items-center py-5 gap-3 lineHeight"
+            >
+                <h2
+                    class="fs-1 fw-bold mb-4 mainTitle raw-umber-font letterSpace"
+                >
+                    Plantas Industriales
+                </h2>
+                <p class="fs-4 m-0 p-1">
+                    La noción de planta se asocia al ser orgánico que vive y
+                    crece, pero que no tiene la capacidad de trasladarse
+                    voluntariamente. Tambien una planta puede ser el diseño de
+                    un edificio (o cada uno sus pisos), la parte inferior del
+                    pie o la fábrica donde se produce algún servicio o producto.
+                </p>
+                <p class="fs-4 m-0 p-1">
+                    Industrial, por otra parte, es aquello perteneciente o
+                    relativo a la industria. Se conoce como industria al
+                    conjunto de operaciones que permiten obtener, transformar o
+                    transportar productos naturales.
+                </p>
+                <p class="fs-4 m-0 p-1">
+                    Publicado por Julián Pérez Porto y Ana Gardey.
+                    <a href="https://definicion.de/plantas-industriales/">
+                        https://definicion.de/plantas-industriales/
+                    </a>
+                </p>
+            </div>
+            <div class="w-50 p-1 mainMap">Banners</div>
+        </div>
+        <AllNode client:load />
+    </div>
+</BaseLayout>

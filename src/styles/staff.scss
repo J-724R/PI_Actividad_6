@@ -1,0 +1,62 @@
+@use '../styles/colors.scss' as color;
+
+.w-30{
+  width: 30%;
+}
+
+.staffText{
+  width: 100%;
+  text-align: justify;
+}
+
+.staffImg{
+  width: 225px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.borderInput{
+  border: 1.5px solid #594636;
+}
+
+.btn{
+  width: 150px;
+  height: 35px;
+  background-color: #7C1CB0;
+  border: #7C1CB0;
+  padding: 0 !important ; 
+}
+
+.btn:hover{
+background-color: #9521D4;
+}
+
+.btnGoBack{
+   
+  width: 120px;
+  height: 30px;
+ 
+  background-color: #EAE1D6;
+  border: none;
+  border-radius: 5px;
+  outline: 2px solid color.$brown-khaki;
+}
+
+.btnGoBack:hover{
+  background-color: #C9B5A6;
+  scale: 1.05;
+  transition: 1s;
+}
+
+@media screen and (max-width: 768px){
+  .staffContainer{
+    flex-direction: column;
+    justify-content: start !important;
+    align-items: center !important;
+    gap: 60px;
+  }
+  .staffCard{
+    align-items: center;
+    min-width: 350px;
+  }
+}

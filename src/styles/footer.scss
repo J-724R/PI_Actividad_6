@@ -1,0 +1,12 @@
+@use '../styles/colors.scss' as color;
+
+.socialNetworkLink:hover{
+  scale: 1.1;
+  transition: 0.8s;;
+  p, svg{
+    color: color.$violet-dark;
+    fill: color.$violet-dark;
+    transition: 1.2s;
+  }
+  
+}
