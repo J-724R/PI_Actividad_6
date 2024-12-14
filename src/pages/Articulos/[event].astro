@@ -16,7 +16,12 @@ export async function getStaticPaths() {
 const params = Astro.request.url.split("/Articulos/")[1];
 const event = timeline.find((event) => event.param === params);
 const img = (event ) ? event.img : placeholder
+
+client: true
+
+console.log('ryuk')
 ---
+
 
 <BaseLayout pageTitle={event?.title}>
     <div class="d-flex flex-column align-items-center">
