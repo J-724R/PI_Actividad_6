@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { timeline } from "../../data/timeline";
 import "../../styles/event.scss";
 import { map } from "astro:schema";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
     const paths = timeline.map((event) => ({
@@ -40,7 +41,7 @@ const event = timeline.find((event) => event.param === params);
                     event?.extra?.map((paragraph) => (
                          <p class="fs-5 m-0 justify-text "><b>{paragraph.title}</b></p>
                          <div>
-                             {paragraph.text?.map((item) => (<p class="fs-5 m-0 justify-text ">{item}</p><br>))}
+                             {paragraph.text?.map((item: any) => (<p class="fs-5 m-0 justify-text ">{item}</p><br>))}
                          </div>
 
                         <p class="fs-5 m-0 justify-text ">{paragraph.listTitle}</p>
@@ -72,7 +73,7 @@ const event = timeline.find((event) => event.param === params);
                     Volver
                 </button>
             </div>
-            <img class="eventImg mt-5" src={event?.img.src} alt="Map" />
+            <Image class="eventImg mt-5 align-self-end" src={event!.img} alt="Map" />
         </div>
     </div>
 </BaseLayout>

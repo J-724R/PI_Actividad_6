@@ -1,16 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { AllNode } from "../Components/ScrollNodes";
+import { Image } from "astro:assets";
 const pageTitle = "Un viaje por la historia";
+
+import banner from "../assets/mainPage/banner.jpg";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="d-flex flex-column superContainer align-items-center p-5 w-100">
+    <div class="position-relative">
+        <Image class="w-100" src={banner} alt="mainMap" />
         <div
-            class="container d-flex mainTextContainer gap-5 w-100 flex-wrap p-5 mb-5"
+            class="container d-flex mainTextContainer w-100 flex-wrap position-absolute"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%);"
         >
             <div
-                class="d-flex flex-column mainText align-items-center py-5 gap-3 lineHeight"
+                class="isabelline-bg d-flex flex-column mainText align-items-center p-5 gap-3 lineHeight"
+                style="border-radius: 25px;"
             >
                 <h2
                     class="fs-1 fw-bold mb-4 mainTitle raw-umber-font letterSpace"
@@ -37,8 +43,9 @@ const pageTitle = "Un viaje por la historia";
                     </a>
                 </p>
             </div>
-            <div class="w-50 p-1 mainMap">Banners</div>
         </div>
+    </div>
+    <div class="d-flex flex-column superContainer align-items-center p-5 w-100">
         <AllNode client:load />
     </div>
 </BaseLayout>
